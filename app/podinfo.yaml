@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.app: semver:^5.0
+spec:
+  template:
+    spec:
+      containers:
+      - name: app
+        image: ghcr.io/stefanprodan/podinfo:5.0.0 # <-- image reference
