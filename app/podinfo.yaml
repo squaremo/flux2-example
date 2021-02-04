@@ -7,7 +7,13 @@ metadata:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.app: semver:^5.0
 spec:
+  selector:
+    matchLabels:
+      app: podinfo
   template:
+    metadata:
+      labels:
+        app: podinfo
     spec:
       containers:
       - name: app
