@@ -6,6 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m0s
+  gitImplementation: libgit2
   ref:
     branch: main
   secretRef:
